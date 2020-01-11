@@ -1,0 +1,13 @@
+<div style="text-align: center; ">
+
+  <h1 dinosaur data-id="<%= @dinosaur.id %>"><%= @dinosaur.name %></h1>
+  <div>
+    <progress value="<%= @dinosaur.health %>" max="<%= @dinosaur.total_health %>"></progress>
+  </div>
+  <div>
+    <img src="<%= @dinosaur.img %>" alt="" style="max-width: 500px; max-height: 500px;">
+  </div>
+  <div style="font-size: 2em; margin-top: 20px;">
+    <%= link_to "HIT!", attack_path(id: @dinosaur.id), remote: true, method: :get, data: {turbolinks: false}, style: "background: red; color: white; border-radius: 5px; padding: 5px;"  %>
+  </div>
+</div>
